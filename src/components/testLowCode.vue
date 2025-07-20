@@ -1,6 +1,9 @@
 <template>
-  <lowCodeForm ref="lowCodeFormRef" :data="demo7" :variables="testData" :callback="handleCallback"
-               :isPreview="isPreview"></lowCodeForm>
+  <el-button class="but" type="primary" @click="()=>isPreview = !isPreview">切换预览模式</el-button>
+  <div class="demo-wrapper">
+    <lowCodeForm ref="lowCodeFormRef" :data="demo7" :variables="testData" :callback="handleCallback"
+                 :isPreview="isPreview"></lowCodeForm>
+  </div>
   <el-image-viewer
       v-if="showPreview !== ''"
       :url-list="[showPreview]"
@@ -10,12 +13,12 @@
   <el-button @click="handleTest" v-if="isPreview">校验</el-button>
 </template>
 <script setup>
-import lowCodeForm from "low-code-form";
-import 'low-code-form/dist/low-code-form.css'
+import lowCodeForm from "low-code-form-generator";
+import 'low-code-form-generator/dist/low-code-form-generator.css'
 import {reactive, ref} from "vue";
 import demo7 from '../assets/demo7.js'
 
-const isPreview = false;
+const isPreview = ref(false);
 const lowCodeFormRef = ref(null);
 const showPreview = ref('')
 
@@ -47,7 +50,7 @@ function handleCallback(name, fieldName, vm) {
 }
 
 function handleTest() {
-  if (isPreview) {
+  if (isPreview.value) {
     lowCodeFormRef.value.formRef().validate((valid) => {
       if (valid) {
         console.log(testData)
@@ -64,9 +67,18 @@ function handleTest() {
   height: 100%;
   margin: 0;
 }
+
+#app {
+  background: rgb(240, 242, 245);
+}
 </style>
 
 <style scoped>
+.demo-wrapper {
+  height: calc(100% - 42px);
+}
 
-
+.but {
+  margin: 5px 0;
+}
 </style>
