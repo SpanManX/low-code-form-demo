@@ -10,7 +10,7 @@
       show-progress
       @close="showPreview = ''"
   />
-  <el-button @click="handleTest" v-if="isPreview">校验</el-button>
+  <el-button @click="handleTest">校验</el-button>
 </template>
 <script setup>
 import lowCodeForm from "low-code-form-generator";
@@ -57,8 +57,8 @@ function handleTest() {
       }
     });
   } else {
-    console.log(lowCodeFormRef.value.getFormData()); // 编辑模式时用于获取form表单变量
-    console.log(lowCodeFormRef.value.getJson()); // 编辑模式时用于获取JSON数据
+    console.log(lowCodeFormRef.value.getFormVariable()); // 编辑模式时用于获取form表单变量
+    console.log(lowCodeFormRef.value.getForm()); // 编辑模式时用于获取JSON数据
   }
 }
 </script>
