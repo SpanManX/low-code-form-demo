@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "element-plus": "^2.9.6",
-    "low-code-form-generator": "^1.0.12",
+    "element-plus": "^2.11.5",
+    "low-code-form-generator": "^1.0.15",
     "sass": "^1.83.0",
     "vue": "^3.5.12"
   },
