@@ -18,7 +18,7 @@ import 'low-code-form-generator/dist/low-code-form-generator.css'
 import {reactive, ref} from "vue";
 import demo7 from '../assets/demo7.js'
 
-const isPreview = ref(false);
+const isPreview = ref(true);
 const lowCodeFormRef = ref(null);
 const showPreview = ref('')
 
@@ -33,7 +33,7 @@ const testData = reactive({
 })
 
 function handleCallback(name, fieldName, vm) {
-  if(name === 'ElTable'){
+  if (name === 'ElTable' && fieldName === 'field1761322748863924') {
     vm.props.data = [
       {
         date: '2016-05-04',

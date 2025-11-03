@@ -12,6 +12,61 @@ export default {
                 "border": true,
                 "stripe": true,
                 "show-header": true,
+                "data": [
+                    {
+                        "date": "2025-05-11",
+                        "name": "test",
+                        "address": "address"
+                    },
+                    {
+                        "date": "2025-12-15",
+                        "name": "test1",
+                        "address": "address1"
+                    }
+                ],
+                "rows": 2
+            },
+            "children": [
+                {
+                    "componentName": "ElTableColumn",
+                    "props": {
+                        "prop": "date",
+                        "label": "日期"
+                    },
+                    "id": "1762187762352685",
+                    "parentId": "1762187761684362"
+                },
+                {
+                    "componentName": "ElTableColumn",
+                    "props": {
+                        "prop": "name",
+                        "label": "姓名"
+                    },
+                    "id": "1762187762352662",
+                    "parentId": "1762187761684362"
+                },
+                {
+                    "componentName": "ElTableColumn",
+                    "props": {
+                        "prop": "address",
+                        "label": "地址"
+                    },
+                    "id": "176218776235265",
+                    "parentId": "1762187761684362"
+                }
+            ],
+            "id": "1762187761684362",
+            "parentId": null
+        },
+        {
+            "componentName": "ElTable",
+            "text": "表格",
+            "icon": {},
+            "noUseForm": true,
+            "props": {
+                "border": true,
+                "stripe": true,
+                "show-header": true,
                 "data": []
             },
             "children": [
