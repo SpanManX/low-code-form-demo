@@ -1,5 +1,5 @@
 <template>
-  <el-button class="but" type="primary" @click="()=>isPreview = !isPreview">切换预览模式</el-button>
+  <el-button class="but" type="primary" @click="()=>isPreview = !isPreview">切换{{isPreview ? '编辑' : '预览'}}模式</el-button>
   <div class="demo-wrapper">
     <lowCodeForm ref="lowCodeFormRef" :data="demo7" :variables="testData" :callback="handleCallback"
                  :isPreview="isPreview"></lowCodeForm>
@@ -10,7 +10,7 @@
       show-progress
       @close="showPreview = ''"
   />
-  <el-button @click="handleTest">校验</el-button>
+  <el-button @click="handleTest">{{isPreview ? '校验' : '获取JSON'}}</el-button>
 </template>
 <script setup>
 import lowCodeForm from "low-code-form-generator";
