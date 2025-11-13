@@ -22,15 +22,19 @@ const isPreview = ref(true);
 const lowCodeFormRef = ref(null);
 const showPreview = ref('')
 
-const testData = reactive({
-  "field1752214307646320": 1752244342177,
-  "field1752214306566359": 2,
-  "field1752214311914827": ["ValueB"],
-  "field1752214310595119": "2025-07-30T16:00:00.000Z",
-  "field1752214308776432": "123",
-  "field1752214314625551": [],
-  "field1752214316464511": []
-})
+const testData = ref({})
+
+setTimeout(() => {
+  testData.value = {
+    "field1752214307646320": 1752244342177,
+    "field1752214306566359": 2,
+    "field1752214311914827": ["ValueB"],
+    "field1752214310595119": "2025-07-30T16:00:00.000Z",
+    "field1752214308776432": "123",
+    "field1752214314625551": [],
+    "field1752214316464511": []
+  }
+}, 1000)
 
 function handleCallback(name, fieldName, vm) {
   if (name === 'ElTable' && fieldName === 'field1761322748863924') {
@@ -62,7 +66,7 @@ function handleTest() {
   if (isPreview.value) {
     lowCodeFormRef.value.formRef().validate((valid) => {
       if (valid) {
-        console.log(testData)
+        console.log(testData.value)
       }
     });
   } else {
